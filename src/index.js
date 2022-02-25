@@ -16,7 +16,7 @@ app.set("PORT", process.env.PORT || 3000);
 require("./database");
 
 
-app.get("/graphql", graphqlHTTP({
+app.use("/graphql", graphqlHTTP({
     schema: notesSchema,
     graphiql: true
 }));
