@@ -1,5 +1,5 @@
 const { GraphQLSchema, GraphQLObjectType } = require("graphql");
-const { createNote } = require("../mutation/notesMutations");
+const { createNote, editNote, deleteNote } = require("../mutation/notesMutations");
 const { getNotes } = require("../queries/notesQueries");
 
 
@@ -16,7 +16,9 @@ const MutationType = new GraphQLObjectType({
     name: "MutationType",
     description: "The root mutation type",
     fields: {
-        createNote
+        createNote,
+        editNote,
+        deleteNote
     }
 });
 
